@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/megamenu.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <title>Furnlite - Furnitures & Interiors Experts </title>
 </head>
 <body>
@@ -661,7 +662,7 @@
                                             </p>
                                             <p class="form-row form-row-wide adchair-field validate-required"
                                                id="billing_adchair_1_field" data-priority="50"><label
-                                                    for="billing_adchair_1" class="">Street adchair&nbsp;<abbr
+                                                    for="billing_adchair_1" class="">Street address&nbsp;<abbr
                                                     class="required" title="required">*</abbr></label><span
                                                     class="furgan-input-wrapper"><input type="text"
                                                                                              class="input-text "
@@ -737,7 +738,7 @@
                                             <p class="form-row form-row-wide validate-required validate-email"
                                                id="billing_email_field" data-priority="110"><label for="billing_email"
                                                                                                    class="">Email
-                                                adchair&nbsp;<abbr class="required"
+                                                address&nbsp;<abbr class="required"
                                                                    title="required">*</abbr></label><span
                                                     class="furgan-input-wrapper"><input type="email"
                                                                                              class="input-text "
@@ -894,8 +895,8 @@
                                                     policy</a>.</p>
                                             </div>
                                         </div>
-                                        <button type="submit" class="button alt" name="furgan_checkout_place_order"
-                                                id="place_order" value="Place order" data-value="Place order">Place
+                                        <button  class="button alt" 
+                                        id="rzp-button1" value="Place order" >Place
                                             order
                                         </button>
                                         <input type="hidden" id="furgan-process-checkout-nonce"
@@ -903,6 +904,80 @@
                                             type="hidden" name="_wp_http_referer"
                                             value="/furgan/?furgan-ajax=update_order_review"></div>
                                 </div>
+                                <script>
+                                    var options = {
+                                      "key": "rzp_test_PmmfenXBudwc5F", // Enter the Key ID generated from the Dashboard
+                                      "amount": "41800",
+                                      "currency": "INR",
+                                      "description": "Acme Corp",
+                                      "image": "example.com/image/rzp.jpg",
+                                      "prefill":
+                                      {
+                                        "email": "gaurav.kumar@example.com",
+                                        "contact": +919900000000,
+                                      },
+                                      config: {
+                                        display: {
+                                          blocks: {
+                                            utib: { //name for Axis block
+                                              name: "Pay using Axis Bank",
+                                              instruments: [
+                                                {
+                                                  method: "card",
+                                                  issuers: ["UTIB"]
+                                                },
+                                                {
+                                                  method: "netbanking",
+                                                  banks: ["UTIB"]
+                                                },
+                                              ]
+                                            },
+                                            other: { //  name for other block
+                                              name: "Other Payment modes",
+                                              instruments: [
+                                                {
+                                                  method: "card",
+                                                  issuers: ["ICIC"]
+                                                },
+                                                {
+                                                  method: 'netbanking',
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          hide: [
+                                            {
+                                            method: "upi"
+                                            }
+                                          ],
+                                          sequence: ["block.utib", "block.other"],
+                                          preferences: {
+                                            show_default_blocks: false // Should Checkout show its default blocks?
+                                          }
+                                        }
+                                      },
+                                      "handler": function (response) {
+                                        alert(response.razorpay_payment_id);
+                                      },
+                                      "modal": {
+                                        "ondismiss": function () {
+                                          if (confirm("Are you sure, you want to close the form?")) {
+                                            txt = "You pressed OK!";
+                                            console.log("Checkout form closed by the user");
+                                          } else {
+                                            txt = "You pressed Cancel!";
+                                            console.log("Complete the Payment")
+                                          }
+                                        }
+                                      }
+                                    };
+                                    var rzp1 = new Razorpay(options);
+                                    document.getElementById('rzp-button1').onclick = function (e) {
+                                      rzp1.open();
+                                      e.preventDefault();
+                                    }
+                                  </script>
+                                
                             </div>
                         </form>
                     </div>
@@ -911,6 +986,7 @@
         </div>
     </div>
 </main>
+
 <footer id="footer" class="footer style-01">
     <div class="section-001 section-009">
         <div class="container">
