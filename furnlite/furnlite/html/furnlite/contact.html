@@ -261,12 +261,12 @@
                                     <div class="shopcart-dropdown block-cart-link" data-furgan="furgan-dropdown">
                                         <a class="block-link link-dropdown" href="#">
                                             <span class="flaticon-cart"></span>
-                                            <span class="count">3</span>
+                                            <span class="count">0</span>
                                         </a>
                                     </div>
                                     <div class="widget furgan widget_shopping_cart">
                                         <div class="widget_shopping_cart_content">
-                                            <ul class="furgan-mini-cart cart_list product_list_widget">
+                                            <!-- <ul class="furgan-mini-cart cart_list product_list_widget">
                                                 <li class="furgan-mini-cart-item mini_cart_item">
                                                     <a href="#" class="remove remove_from_cart_button">×</a>
                                                     <a href="#">
@@ -304,7 +304,7 @@
                                             <p class="furgan-mini-cart__total total"><strong>Subtotal:</strong>
                                                 <span class="furgan-Price-amount amount"><span
                                                         class="furgan-Price-currencySymbol">₹</span>418.00</span>
-                                            </p>
+                                            </p> -->
                                             <p class="furgan-mini-cart__buttons buttons">
                                                 <a href="cart.html" class="button furgan-forward">Viewcart</a>
                                                 <a href="checkout.html" class="button checkout furgan-forward">Checkout</a></p>
@@ -420,12 +420,12 @@
                         <div class="shopcart-dropdown block-cart-link" data-furgan="furgan-dropdown">
                             <a class="block-link link-dropdown" href="#">
                                 <span class="flaticon-cart"></span>
-                                <span class="count">3</span>
+                                <span class="count">0</span>
                             </a>
                         </div>
                         <div class="widget furgan widget_shopping_cart">
                             <div class="widget_shopping_cart_content">
-                                <ul class="furgan-mini-cart cart_list product_list_widget">
+                                <!-- <ul class="furgan-mini-cart cart_list product_list_widget">
                                     <li class="furgan-mini-cart-item mini_cart_item">
                                         <a href="#" class="remove remove_from_cart_button">×</a>
                                         <a href="#">
@@ -463,7 +463,7 @@
                                 <p class="furgan-mini-cart__total total"><strong>Subtotal:</strong>
                                     <span class="furgan-Price-amount amount"><span
                                             class="furgan-Price-currencySymbol">₹</span>418.00</span>
-                                </p>
+                                </p> -->
                                 <p class="furgan-mini-cart__buttons buttons">
                                     <a href="cart.html" class="button furgan-forward">Viewcart</a>
                                     <a href="checkout.html" class="button checkout furgan-forward">Checkout</a></p>
@@ -514,7 +514,8 @@
                         </div>
                         <div class="col-md-6">
                             <div role="form" class="wpcf7">
-                                <form class="wpcf7-form">
+                                <form action="https://api.web3forms.com/submit" method="POST" class="wpcf7-form">
+                                    <input type="hidden" name="access_key" value="5e55ae4d-e863-426a-a24e-2df7d87b84dc">
                                     <p><label> Name *<br>
                                         <span class="wpcf7-form-control-wrap your-name">
                                             <input name="your-name" value="" size="40"
@@ -533,7 +534,8 @@
                                                       cols="40" rows="10"
                                                       class="wpcf7-form-control wpcf7-textarea"></textarea></span>
                                     </label></p>
-                                    <p><input value="Send" class="wpcf7-form-control wpcf7-submit" type="submit"></p>
+                                    <button>Submit Now</button>
+                                    <!-- <p><input value="Send" class="wpcf7-form-control wpcf7-submit" type="submit"></p> -->
                                 </form>
                             </div>
                         </div>
